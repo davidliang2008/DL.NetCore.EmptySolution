@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Global styles -->
+    <environment include="development">
+        <link rel="stylesheet" href="~/raw/css/bootstrap-theme-default.css" />
+    </environment>
+
+    <title>@ViewBag.Title</title>
+
+    <!-- Specific styles -->
+    @RenderSection("css", required: false)
+</head>
+<body>
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <!-- Global scripts -->
+    <environment include="development">
+        <script src="~/js/global.js"></script>
+    </environment>
+    <environment exclude="development">
+        <script src="~/js/global.min.js"></script>
+    </environment>
+
+    <!-- Specific scripts -->
+    @RenderSection("scripts", required: false)
+</body>
+</html>

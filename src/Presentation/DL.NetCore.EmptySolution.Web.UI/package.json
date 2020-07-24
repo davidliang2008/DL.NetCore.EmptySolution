@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "name": "dl.netcore.emptysolution",
+  "private": true,
+  "dependencies": {
+    "jquery": "3.5.1",
+    "jquery-validation": "1.19.2",
+    "jquery-validation-unobtrusive": "3.2.11",
+    "popper.js": "1.16.1",
+    "bootstrap": "4.5.0",
+    "@fortawesome/fontawesome-free": "5.14.0"
+  },
+  "devDependencies": {
+    "gulp": "4.0.2",
+    "gulp-concat": "2.6.1",
+    "gulp-terser": "1.2.1",
+    "gulp-cssmin": "0.2.0",
+    "gulp-rename": "2.0.0",
+    "del": "4.1.1"
+  }
+}
