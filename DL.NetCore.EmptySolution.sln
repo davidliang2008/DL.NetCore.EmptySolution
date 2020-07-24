@@ -9,7 +9,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AFBDA39F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{239EF7A3-FEF9-4C8E-88A0-A8ED45DEDD0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL.NetCore.EmptySolution.Web.UI", "src\Presentation\DL.NetCore.EmptySolution.Web.UI\DL.NetCore.EmptySolution.Web.UI.csproj", "{A2C7E8A6-66BC-4525-A3D7-76A6481072F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DL.NetCore.EmptySolution.Web.UI", "src\Presentation\DL.NetCore.EmptySolution.Web.UI\DL.NetCore.EmptySolution.Web.UI.csproj", "{A2C7E8A6-66BC-4525-A3D7-76A6481072F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{9F064ACC-E7CB-49E4-9AF7-323635A4A249}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
