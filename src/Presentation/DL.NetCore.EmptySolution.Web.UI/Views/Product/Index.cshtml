@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Products</h2>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Unit Price</th>
+                <th>Out of Stock</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section css {
+    <!-- jquery.dataTables styles -->
+    <environment include="development">
+        <link rel="stylesheet" href="~/css/jquery.dataTables.css" />
+    </environment>
+    <environment exclude="development">
+        <link rel="stylesheet" href="~/css/jquery.dataTables.min.css" />
+    </environment>
+}
+
+@section scripts {
+    <!-- jquery.dataTables scripts -->
+    <environment include="development">
+        <script src="~/js/jquery.dataTables.js"></script>
+    </environment>
+    <environment exclude="development">
+        <script src="~/js/jquery.dataTables.min.js"></script>
+    </environment>
+
+    <script type="text/javascript">
+        $(function () {
+
+        });
+    </script>
+}
