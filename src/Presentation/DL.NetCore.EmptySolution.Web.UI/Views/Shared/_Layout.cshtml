@@ -8,7 +8,10 @@
 
     <!-- Global styles -->
     <environment include="development">
-        <link rel="stylesheet" href="~/raw/css/bootstrap-theme-default.css" />
+        <link rel="stylesheet" href="~/css/global.css" />
+    </environment>
+    <environment exclude="development">
+        <link rel="stylesheet" href="~/css/global.min.css" />
     </environment>
 
     <title>@ViewBag.Title</title>

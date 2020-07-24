@@ -6,12 +6,13 @@ const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 const del = require('del');
 
-const clean = function () {
-    return del(['wwwroot/**', '!wwwroot']);
+const clean = done => {
+    del.sync(['wwwroot/**', '!wwwroot']);
+    done();
 };
 
-const copyGlobalScripts = function () {
-    return src([
+const copyGlobalScripts = done => {
+    src([
         'node_modules/jquery/dist/jquery.js',
         'node_modules/jquery-validation/dist/jquery.validate.js',
         'node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js',
@@ -23,17 +24,31 @@ const copyGlobalScripts = function () {
         .pipe(terser())
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest('wwwroot/js'));
+
+    done();
 };
 
-const copyGlobalStyles = function () {
-    return src([
-        'assets/css/bootstrap-theme-default.css'
+const copyGlobalStyles = done => {
+    src([
+        'assets/css/bootstrap-theme-default.css',
+        'node_modules/@fortawesome/fontawesome-free/css/all.css'
     ])
         .pipe(concat('global.css'))
         .pipe(dest('wwwroot/css'))
         .pipe(cssmin())
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest('wwwroot/css'));
+
+    done();
+};
+
+const copyFontawesomeFonts = done => {
+    src([
+        'node_modules/@fortawesome/fontawesome-free/webfonts/**.*'
+    ])
+        .pipe(dest('wwwroot/webfonts'));
+
+    done();
 };
 
 exports.clean = clean;
@@ -41,6 +56,7 @@ exports.build = series(
     clean,
     parallel(
         copyGlobalScripts,
-        copyGlobalStyles
+        copyGlobalStyles,
+        copyFontawesomeFonts
     )
 );
