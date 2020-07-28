@@ -1,6 +1,10 @@
 ﻿[
   {
-    "outputFile": "assets/css/bootstrap-theme-default.css",
-    "inputFile": "assets/css/bootstrap-theme-default.scss"
+    "outputFile": "assets/css/global.css",
+    "inputFile": "assets/css/global.scss"
+  },
+  {
+    "outputFile": "assets/css/dataTables.bootstrap4.custom.css",
+    "inputFile": "assets/css/dataTables.bootstrap4.custom.scss"
   }
 ]

@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{9F064A
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{4CF2BC40-34B5-44BB-971D-68445B8A41D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL.NetCore.EmptySolution.Web.Common", "src\Presentation\DL.NetCore.EmptySolution.Web.Common\DL.NetCore.EmptySolution.Web.Common.csproj", "{1AC3B5CD-C2E6-41BF-8CDF-395E9C49BE85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +32,10 @@ Global
 		{A2C7E8A6-66BC-4525-A3D7-76A6481072F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2C7E8A6-66BC-4525-A3D7-76A6481072F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2C7E8A6-66BC-4525-A3D7-76A6481072F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AC3B5CD-C2E6-41BF-8CDF-395E9C49BE85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC3B5CD-C2E6-41BF-8CDF-395E9C49BE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC3B5CD-C2E6-41BF-8CDF-395E9C49BE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC3B5CD-C2E6-41BF-8CDF-395E9C49BE85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +43,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{239EF7A3-FEF9-4C8E-88A0-A8ED45DEDD0F} = {981BA177-2027-400B-A125-2EA62AD91BFC}
 		{A2C7E8A6-66BC-4525-A3D7-76A6481072F6} = {239EF7A3-FEF9-4C8E-88A0-A8ED45DEDD0F}
+		{4CF2BC40-34B5-44BB-971D-68445B8A41D6} = {981BA177-2027-400B-A125-2EA62AD91BFC}
+		{1AC3B5CD-C2E6-41BF-8CDF-395E9C49BE85} = {239EF7A3-FEF9-4C8E-88A0-A8ED45DEDD0F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D2298742-3D26-4BA3-8B55-847367E5941D}

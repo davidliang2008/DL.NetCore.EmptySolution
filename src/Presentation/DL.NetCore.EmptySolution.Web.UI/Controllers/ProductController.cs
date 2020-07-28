@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using DataTables.AspNet.AspNetCore;
+using DataTables.AspNet.Core;
+using DL.NetCore.EmptySolution.Web.Common.DataTables.Extensions;
 using DL.NetCore.EmptySolution.Web.UI.Models.Product;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +14,40 @@ namespace DL.NetCore.EmptySolution.Web.UI.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult GetList(IDataTablesRequest request)
+        {
+            var products = GetFakeProducts();
+
+            var rows = new List<ProductListRowViewModel>();
+            foreach (var product in products)
+            {
+                rows.Add(new ProductListRowViewModel
+                {
+                    ProductId = product.ProductId,
+                    ProductName = product.ProductName,
+                    ProductCategory = product.ProductCategory.CategoryName,
+                    OutOfStock = product.OutOfStock,
+                    UnitPrice = product.UnitPrice,
+                    DateCreated = product.DateCreatedUtc.ToLocalTime()
+                });
+            }
+
+            // Filtering
+            var filteredRows = rows.AsQueryable()
+                .GlobalFilterBy(request.Search, request.Columns);
+
+            // Ordering and Paging
+            var pagedRows = filteredRows
+                .SortBy(request.Columns)
+                .Skip(request.Start)
+                .Take(request.Length);
+
+            var response = DataTablesResponse.Create(request, rows.Count, filteredRows.Count(), pagedRows);
+
+            return new DataTablesJsonResult(response);
         }
 
         private IEnumerable<FakeProductEntity> GetFakeProducts()
@@ -140,6 +176,56 @@ namespace DL.NetCore.EmptySolution.Web.UI.Controllers
                 UnitPrice = 30.4,
                 OutOfStock = true,
                 DateCreatedUtc = DateTime.Parse("2011/01/01")
+            };
+
+            yield return new FakeProductEntity
+            {
+                ProductId = 8,
+                ProductName = "Architecting ASP.NET eBook",
+                ProductCategory = categories[rnd.Next(0, categories.Count)],
+                UnitPrice = 19.95,
+                OutOfStock = true,
+                DateCreatedUtc = DateTime.Parse("2000/01/01")
+            };
+
+            yield return new FakeProductEntity
+            {
+                ProductId = 9,
+                ProductName = "Zero SF/f Motorcycle",
+                ProductCategory = categories[rnd.Next(0, categories.Count)],
+                UnitPrice = 19985,
+                OutOfStock = false,
+                DateCreatedUtc = DateTime.Parse("2020/03/08")
+            };
+
+            yield return new FakeProductEntity
+            {
+                ProductId = 10,
+                ProductName = "VB.NET Fundamentals eBook",
+                ProductCategory = categories[rnd.Next(0, categories.Count)],
+                UnitPrice = 9.95,
+                OutOfStock = false,
+                DateCreatedUtc = DateTime.Parse("1998/07/06")
+            };
+
+            yield return new FakeProductEntity
+            {
+                ProductId = 11,
+                ProductName = "Security for ASP.NET",
+                ProductCategory = categories[rnd.Next(0, categories.Count)],
+                UnitPrice = 21,
+                OutOfStock = false,
+                DateCreatedUtc = DateTime.Parse("2012/03/04")
+            };
+
+            yield return new FakeProductEntity
+            {
+                ProductId = 12,
+                ProductName = "Fundamentals of SQL Server",
+                ProductCategory = categories[rnd.Next(0, categories.Count)],
+                UnitPrice = 21.34,
+                OutOfStock = true,
+                DateCreatedUtc = DateTime.Parse("1999/09/30")
             };
         }
     }

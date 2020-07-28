@@ -14,11 +14,15 @@
 
   <ItemGroup>
     <PackageReference Include="BuildWebCompiler" Version="1.12.405" />
+    <PackageReference Include="DataTables.AspNet.AspNetCore" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="assets\js\" />
     <Folder Include="assets\img\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DL.NetCore.EmptySolution.Web.Common\DL.NetCore.EmptySolution.Web.Common.csproj" />
   </ItemGroup>
 
 </Project>

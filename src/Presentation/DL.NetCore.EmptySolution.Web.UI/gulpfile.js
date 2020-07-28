@@ -1,5 +1,4 @@
-﻿/// <binding BeforeBuild='build' />
-const { series, parallel, src, dest } = require('gulp');
+﻿const { series, parallel, src, dest } = require('gulp');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
 const cssmin = require('gulp-cssmin');
@@ -40,7 +39,7 @@ const copyGlobalScripts = done => {
 const copyGlobalStyles = done => {
     bundleAndMinify(
         [
-            'assets/css/bootstrap-theme-default.css',
+            'assets/css/global.css',
             'node_modules/@fortawesome/fontawesome-free/css/all.css'
         ],
         'global.css',
@@ -64,7 +63,7 @@ const copyDatatablesScripts = done => {
     bundleAndMinify(
         [
             'node_modules/datatables.net/js/jquery.dataTables.js',
-            'node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js'
+            'assets/js/dataTables.bootstrap4.custom.js'
         ],
         'jquery.dataTables.js',
         'wwwroot/js',
@@ -77,7 +76,8 @@ const copyDatatablesScripts = done => {
 const copyDatatablesStyles = done => {
     bundleAndMinify(
         [
-            'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css'
+            'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css',
+            'assets/css/dataTables.bootstrap4.custom.css'
         ],
         'jquery.dataTables.css',
         'wwwroot/css',

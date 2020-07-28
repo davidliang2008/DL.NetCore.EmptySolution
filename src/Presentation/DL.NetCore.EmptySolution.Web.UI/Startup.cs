@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataTables.AspNet.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,6 +26,8 @@ namespace DL.NetCore.EmptySolution.Web.UI
             services
                 .AddRouting(options => options.LowercaseUrls = true)
                 .AddControllersWithViews();
+
+            services.RegisterDataTables();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

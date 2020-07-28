@@ -3,8 +3,11 @@
 }
 
 <h2>Products</h2>
+<p class="text-muted">
+    List of products you can manage
+</p>
 <div class="table-responsive">
-    <table class="table">
+    <table id="table-products" class="table">
         <thead>
             <tr>
                 <th>#</th>
@@ -12,8 +15,10 @@
                 <th>Category</th>
                 <th>Unit Price</th>
                 <th>Out of Stock</th>
+                <th>Created on</th>
             </tr>
         </thead>
+        <tbody></tbody>
     </table>
 </div>
 
@@ -38,7 +43,41 @@
 
     <script type="text/javascript">
         $(function () {
-
+            $('#table-products').dataTable({
+                serverSide: true,
+                ajax: {
+                    url: '@Url.Action("getList", "product", new { area = "" })',
+                    type: 'POST'
+                },
+                processing: true,
+                order: [1, 'asc'],
+                columns: [
+                    {
+                        data: 'productId'
+                    },
+                    {
+                        data: 'productName'
+                    },
+                    {
+                        data: 'productCategory'
+                    },
+                    {
+                        data: 'unitPrice', render: function (data, type, row) {
+                            return row.unitPriceStr;
+                        }
+                    },
+                    {
+                        data: 'outOfStock', searchable: false, render: function (data, type, row) {
+                            return data ? "Yes" : "";
+                        }
+                    },
+                    {
+                        data: 'dateCreated', render: function (data, type, row) {
+                            return row.dateCreatedStr;
+                        }
+                    }
+                ]
+            }).fnSetFilteringDelay(1000);
         });
     </script>
 }
