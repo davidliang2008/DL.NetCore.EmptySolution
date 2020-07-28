@@ -25,7 +25,8 @@ namespace DL.NetCore.EmptySolution.Web.UI
         {
             services
                 .AddRouting(options => options.LowercaseUrls = true)
-                .AddControllersWithViews();
+                .AddControllersWithViews()
+                .AddRazorRuntimeCompilation();
 
             services.RegisterDataTables();
         }
