@@ -50,6 +50,11 @@ namespace DL.NetCore.EmptySolution.Web.UI.Controllers
             return new DataTablesJsonResult(response);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         private IEnumerable<FakeProductEntity> GetFakeProducts()
         {
             var categories = new List<FakeProductCategoryEntity>

@@ -1,0 +1,54 @@
+﻿@model DL.NetCore.EmptySolution.Web.UI.Models.Product.CreateProductViewModel
+@{
+    ViewBag.Title = "Create Product";
+}
+
+<h2>Create Product</h2>
+<div class="row">
+    <div class="col-md-6">
+        <h5>asp-validation-summary="All"</h5>
+        <form method="post" asp-area="" asp-controller="product" asp-action="create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductName"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitPrice"></label>
+                <input asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input asp-for="OutOfStock" class="custom-control-input" />
+                    <label asp-for="OutOfStock" class="custom-control-label"></label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Create</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <h5>asp-validation-summary="ModelOnly"</h5>
+        <form method="post" asp-area="" asp-controller="product" asp-action="create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductName"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitPrice"></label>
+                <input asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input asp-for="OutOfStock" class="custom-control-input" />
+                    <label asp-for="OutOfStock" class="custom-control-label"></label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>
