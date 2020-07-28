@@ -6,5 +6,9 @@
   {
     "outputFile": "assets/css/dataTables.bootstrap4.custom.css",
     "inputFile": "assets/css/dataTables.bootstrap4.custom.scss"
+  },
+  {
+    "outputFile": "assets/css/site.css",
+    "inputFile": "assets/css/site.scss"
   }
 ]

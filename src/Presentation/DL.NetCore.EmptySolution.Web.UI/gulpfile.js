@@ -87,6 +87,19 @@ const copyDatatablesStyles = done => {
     done();
 };
 
+const copySitesStyles = done => {
+    bundleAndMinify(
+        [
+            'assets/css/site.css'
+        ],
+        'site.css',
+        'wwwroot/css',
+        cssmin
+    );
+
+    done();
+};
+
 exports.clean = clean;
 exports.build = series(
     clean,
@@ -95,6 +108,7 @@ exports.build = series(
         copyGlobalStyles,
         copyFontawesomeFonts,
         copyDatatablesScripts,
-        copyDatatablesStyles
+        copyDatatablesStyles,
+        copySitesStyles
     )
 );
