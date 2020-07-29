@@ -1,0 +1,5 @@
+﻿label.required:not(.custom-control-label):after {
+    content: "*";
+    padding-left: .3rem;
+    color: theme-color('danger');
+}

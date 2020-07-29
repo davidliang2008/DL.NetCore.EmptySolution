@@ -7203,6 +7203,11 @@ a.text-dark:hover, a.text-dark:focus {
 form {
   padding: 1rem; }
 
+label.required:not(.custom-control-label):after {
+  content: "*";
+  padding-left: .3rem;
+  color: #dc3545; }
+
 .validation-summary-errors,
 .field-validation-error {
   font-size: .9rem; }
