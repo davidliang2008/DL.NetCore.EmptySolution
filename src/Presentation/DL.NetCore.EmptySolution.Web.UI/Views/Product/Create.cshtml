@@ -9,6 +9,12 @@
         <h5>asp-validation-summary="All"</h5>
         <form method="post" asp-area="" asp-controller="product" asp-action="create">
             <div asp-validation-summary="All" class="text-danger"></div>
+            <ul>
+                <li><span asp-validation-for="ProductName" class="text-danger"></span></li>
+                <li><span asp-validation-for="UnitPrice" class="text-danger"></span></li>
+            </ul>
+            <span asp-validation-for="ProductName" class="text-danger"></span>
+            <span asp-validation-for="UnitPrice" class="text-danger"></span>
             <div class="form-group">
                 <label asp-for="ProductName"></label>
                 <input asp-for="ProductName" class="form-control" />

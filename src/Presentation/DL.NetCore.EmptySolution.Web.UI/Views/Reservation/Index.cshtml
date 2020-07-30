@@ -1,0 +1,63 @@
+﻿@model DL.NetCore.EmptySolution.Web.UI.Models.Reservation.ReservationListViewModel
+@{
+    ViewBag.Title = "Reservations";
+
+    var selectList = new SelectList(Model.Filters.AvailableReservationTypes, "Key", "Value");
+}
+
+<h2>Reservations</h2>
+<p class="text-muted">
+    List of reservations you can manage
+</p>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" asp-area="" asp-controller="reservation" asp-action="search">
+                    <div class="form-group">
+                        <label asp-for="Filters.ClientNameSearchQuery"></label>
+                        <input asp-for="Filters.ClientNameSearchQuery" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Filters.ReservationTypeSearchQuery"></label>
+                        <select asp-for="Filters.ReservationTypeSearchQuery" class="form-control"
+                                asp-items="selectList">
+                            <option value="">- select -</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle"></i>
+                You searched for <strong>@Model.Filters.ClientNameSearchQuery</strong> 
+                and <strong>@Model.Filters.ReservationTypeSearchQuery</strong>
+            </div>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Client name</th>
+                        <th>Start from</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var reservation in Model.Reservations)
+                    {
+                        <tr>
+                            <td>@reservation.ReservationId</td>
+                            <td>@reservation.ClientName</td>
+                            <td>@reservation.StartTime.ToShortDateString()</td>
+                            <td>@reservation.ReservationType</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
