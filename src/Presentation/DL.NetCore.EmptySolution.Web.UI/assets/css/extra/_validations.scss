@@ -2,3 +2,13 @@
 .field-validation-error {
     font-size: .9rem;
 }
+
+.clientside-validation-summary {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .field-validation-error > span:before {
+        content: "*";
+        padding-right: .3rem;
+    }
+}

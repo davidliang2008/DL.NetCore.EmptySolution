@@ -1,0 +1,46 @@
+﻿@model DL.NetCore.EmptySolution.Web.UI.Models.User.InviteUserViewModel
+@{
+    ViewBag.Title = "Invite User";
+}
+
+<h2>Invite User</h2>
+<div class="row">
+    <div class="col-md-6">
+        <h5>Simple Way: reuse asp-message-for</h5>
+        <form asp-area="" asp-controller="user" asp-action="invite"
+              data-ajax="true"
+              data-ajax-method="POST"
+              data-ajax-begin="onBegin"
+              data-ajax-complete="onComplete">
+            <div class="form-group">
+                <label asp-for="EmailAddress"></label>
+                <input asp-for="EmailAddress" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DisplayName"></label>
+                <input asp-for="DisplayName" class="form-control" />
+            </div>
+            
+            <div class="form-group clientside-validation-summary">
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                <span asp-validation-for="DisplayName" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Invite</button>
+        </form>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            window.onBegin = function () {
+
+            };
+
+            window.onComplete = function () {
+
+            };
+        });
+    </script>
+}
