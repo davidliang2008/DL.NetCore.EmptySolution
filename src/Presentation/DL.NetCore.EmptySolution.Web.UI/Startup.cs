@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using DataTables.AspNet.AspNetCore;
+using DL.NetCore.EmptySolution.Data.EFCore.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +19,8 @@ namespace DL.NetCore.EmptySolution.Web.UI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.RegisterDbContext(this.Configuration);
+
             services
                 .AddRouting(options => options.LowercaseUrls = true)
                 .AddControllersWithViews()
