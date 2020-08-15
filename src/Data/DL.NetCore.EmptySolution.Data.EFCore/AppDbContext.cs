@@ -18,6 +18,8 @@ namespace DL.NetCore.EmptySolution.Data.EFCore
 
             modelBuilder.ApplyConfiguration(new ExtrovertEntityConfiguration());
             modelBuilder.ApplyConfiguration(new ExtrovertFriendshipEntityConfiguration());
+
+            modelBuilder.ApplyConfiguration(new WorkPackageEntityConfiguration());
         }
     }
 }

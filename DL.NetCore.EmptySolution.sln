@@ -24,11 +24,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DL.NetCore.EmptySolution.We
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{664C82EF-1EFE-4480-A9B4-F39EBA3EE4B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL.NetCore.EmptySolution.Domain.SocialRelationship", "src\Domain\DL.NetCore.EmptySolution.Domain.SocialRelationship\DL.NetCore.EmptySolution.Domain.SocialRelationship.csproj", "{B9C25E07-F020-4796-BA94-E4BE0F1EB26A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DL.NetCore.EmptySolution.Domain.SocialRelationship", "src\Domain\DL.NetCore.EmptySolution.Domain.SocialRelationship\DL.NetCore.EmptySolution.Domain.SocialRelationship.csproj", "{B9C25E07-F020-4796-BA94-E4BE0F1EB26A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C3608D76-44A0-4D47-97F2-D29BE3D94A7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DL.NetCore.EmptySolution.Data.EFCore", "src\Data\DL.NetCore.EmptySolution.Data.EFCore\DL.NetCore.EmptySolution.Data.EFCore.csproj", "{0B6565C0-6F51-4557-85C6-8E75B4C9399B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DL.NetCore.EmptySolution.Data.EFCore", "src\Data\DL.NetCore.EmptySolution.Data.EFCore\DL.NetCore.EmptySolution.Data.EFCore.csproj", "{0B6565C0-6F51-4557-85C6-8E75B4C9399B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,7 +13,7 @@ namespace DL.NetCore.EmptySolution.Data.EFCore.Configurations
             builder.HasOne(x => x.Extrovert)
                 .WithMany(x => x.Friends)
                 .HasForeignKey(x => x.ExtrovertId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(x => x.ExtrovertFriend)
                 .WithMany(x => x.FriendsOf)
