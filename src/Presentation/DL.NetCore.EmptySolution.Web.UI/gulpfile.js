@@ -1,4 +1,5 @@
-﻿const { series, parallel, src, dest } = require('gulp');
+﻿/// <binding BeforeBuild='clean' AfterBuild='build' Clean='clean' />
+const { series, parallel, src, dest } = require('gulp');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
 const cssmin = require('gulp-cssmin');

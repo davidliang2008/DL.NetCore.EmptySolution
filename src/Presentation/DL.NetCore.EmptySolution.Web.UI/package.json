@@ -3,14 +3,14 @@
   "name": "dl.netcore.emptysolution",
   "private": true,
   "dependencies": {
-    "jquery": "3.5.1",
-    "jquery-validation": "1.19.2",
-    "jquery-validation-unobtrusive": "3.2.11",
-    "popper.js": "1.16.1",
-    "bootstrap": "4.5.0",
-    "@fortawesome/fontawesome-free": "5.14.0",
-    "datatables.net": "1.10.21",
-    "datatables.net-bs4": "1.10.21"
+    "@fortawesome/fontawesome-free": "5.15.4",
+    "bootstrap": "4.6.1",
+    "datatables.net": "1.11.5",
+    "datatables.net-bs4": "1.11.5",
+    "jquery": "3.6.0",
+    "jquery-validation": "1.19.3",
+    "jquery-validation-unobtrusive": "3.2.12",
+    "popper.js": "1.16.1"
   },
   "devDependencies": {
     "gulp": "4.0.2",
